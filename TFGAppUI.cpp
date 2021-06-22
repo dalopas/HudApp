@@ -1,9 +1,10 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Name:        TFGAppUI.cpp
-// Purpose:     Final degree work.
-// Author:      David Lozano Pascual
-// Created:     2021-06-01
-// Copyright:   (C) Copyright 2021, David Lozano Pascual, All Rights Reserved.
+// Name:        auidemo.cpp
+// Purpose:     wxaui: wx advanced user interface - sample/test program
+// Author:      Benjamin I. Williams
+// Modified by:
+// Created:     2005-10-03
+// Copyright:   (C) Copyright 2005, Kirix Corporation, All Rights Reserved.
 // Licence:     wxWindows Library Licence, Version 3.1
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -516,8 +517,8 @@ class wxMovableImagePanel : public wxPanel
                         padre->Move(padre->GetParent()->ScreenToClient(wxPoint(newposX, newposY)));
                     }
 
-                    this->gridPropiedades->GetProperty("Posici√≥n X")->SetValue(newposX - 34);
-                    this->gridPropiedades->GetProperty("Posici√≥n Y")->SetValue(newposY - 86);
+                    this->gridPropiedades->GetProperty("PosiciÛn X")->SetValue(newposX - 34);
+                    this->gridPropiedades->GetProperty("PosiciÛn Y")->SetValue(newposY - 86);
                 }
                 else
                 {
@@ -961,8 +962,8 @@ class movablePanel : public wxPanel
                         }
                     }
 
-                    this->gridPropiedades->GetProperty("Posici√≥n X")->SetValue(newposX - 34);
-                    this->gridPropiedades->GetProperty("Posici√≥n Y")->SetValue(newposY - 86);
+                    this->gridPropiedades->GetProperty("PosiciÛn X")->SetValue(newposX - 34);
+                    this->gridPropiedades->GetProperty("PosiciÛn Y")->SetValue(newposY - 86);
                 }
                 else
                 {
@@ -1517,8 +1518,8 @@ class movableText : public wxPanel
                         texto->Refresh();
                     }
 
-                    this->gridPropiedades->GetProperty("Posici√≥n X")->SetValue(newposX - 34);
-                    this->gridPropiedades->GetProperty("Posici√≥n Y")->SetValue(newposY - 86);
+                    this->gridPropiedades->GetProperty("PosiciÛn X")->SetValue(newposX - 34);
+                    this->gridPropiedades->GetProperty("PosiciÛn Y")->SetValue(newposY - 86);
                 }
                 else
                 {
@@ -1883,7 +1884,7 @@ class ventanaHUD : public wxAuiNotebook
         ctrl->AddPage(panelVista, nombreVentana, false, page_bmp);
 
 
-        // A√±ade el panel con el Property Grid.
+        // AÒade el panel con el Property Grid.
         panelInspector = new wxPanel(padre, wxID_ANY);
         panelInspector->SetSize(tamInspector);
         panelInspector->SetBackgroundColour(wxColour(45, 75, 166));
@@ -1894,7 +1895,7 @@ class ventanaHUD : public wxAuiNotebook
         m_mgr->AddPane(panelInspector, wxAuiPaneInfo().Name(nombrePropiedades).Caption(nombrePropiedades).Right().Layer(1).Position(1).CloseButton(false).MaximizeButton(false).MinSize(panelInspector->GetSize()).MaxSize(panelInspector->GetSize()).BestSize(panelInspector->GetSize()));
 
 
-        // A√±ade el panel con el √Årbol de Elementos.
+        // AÒade el panel con el ¡rbol de Elementos.
         panelJerarquia = new wxPanel(padre, wxID_ANY);
         panelJerarquia->SetSize(tamJerarquia);
         panelJerarquia->SetBackgroundColour(wxColour(242, 88, 53));
@@ -1902,7 +1903,7 @@ class ventanaHUD : public wxAuiNotebook
         arbolJerarquia->Connect(wxEVT_COMMAND_LIST_ITEM_ACTIVATED, wxListEventHandler(ventanaHUD::clickLista), NULL, this);
         arbolJerarquia->Connect(wxEVT_LIST_ITEM_RIGHT_CLICK, wxListEventHandler(ventanaHUD::borraListaItem), NULL, this);
 
-        nombreArbol = "√Årbol Elementos ";
+        nombreArbol = "¡rbol Elementos ";
         nombreArbol << nVentana + 1;
         //std::cout << nombreArbol << endl;
         m_mgr->AddPane(panelJerarquia, wxAuiPaneInfo().Name(nombreArbol).Caption(nombreArbol).Right().Layer(1).Position(2).CloseButton(false).MaximizeButton(false).MinSize(panelJerarquia->GetSize()).MaxSize(panelJerarquia->GetSize()).BestSize(panelJerarquia->GetSize()));
@@ -1955,7 +1956,7 @@ class ventanaHUD : public wxAuiNotebook
         ctrl->AddPage(panelVista, nombreVentana, false, page_bmp);
 
 
-        // A√±ade el panel con el Property Grid.
+        // AÒade el panel con el Property Grid.
         panelInspector = new wxPanel(padre, wxID_ANY);
         panelInspector->SetSize(tamInspector);
         panelInspector->SetBackgroundColour(wxColour(45, 75, 166));
@@ -1968,7 +1969,7 @@ class ventanaHUD : public wxAuiNotebook
         m_mgr->AddPane(panelInspector, wxAuiPaneInfo().Name(nombrePropiedades).Caption(nombrePropiedades).Right().Layer(1).Position(1).CloseButton(true).MaximizeButton(true).MinSize(panelInspector->GetSize()).MaxSize(panelInspector->GetSize()).BestSize(panelInspector->GetSize()));
 
 
-        // A√±ade el panel con el √Årbol de Elementos.
+        // AÒade el panel con el ¡rbol de Elementos.
         panelJerarquia = new wxPanel(padre, wxID_ANY);
         panelJerarquia->SetSize(tamJerarquia);
         panelJerarquia->SetBackgroundColour(wxColour(242, 88, 53));
@@ -1976,7 +1977,7 @@ class ventanaHUD : public wxAuiNotebook
         arbolJerarquia->Connect(wxEVT_COMMAND_LIST_ITEM_ACTIVATED, wxListEventHandler(ventanaHUD::clickLista), NULL, this);
         arbolJerarquia->Connect(wxEVT_LIST_ITEM_RIGHT_CLICK, wxListEventHandler(ventanaHUD::borraListaItem), NULL, this);
 
-        nombreArbol = "√Årbol Elementos ";
+        nombreArbol = "¡rbol Elementos ";
         nombreArbol << nVentana + 1;
 
         //std::cout << nombreArbol << endl;
@@ -2126,13 +2127,13 @@ class ventanaHUD : public wxAuiNotebook
         gridPropiedadesPanel->Connect(wxEVT_PG_CHANGING, wxPropertyGridEventHandler(ventanaHUD::OnPropertyGridChanging), NULL, this);
 
         gridPropiedadesPanel->Append(new wxStringProperty("Nombre", wxPG_LABEL, panelProvisional->getNombre()));
-        gridPropiedadesPanel->Append(new wxIntProperty("Posici√≥n X", wxPG_LABEL, panelProvisional->getPosX()));
-        gridPropiedadesPanel->Append(new wxIntProperty("Posici√≥n Y", wxPG_LABEL, panelProvisional->getPosY()));
-        gridPropiedadesPanel->Append(new wxIntProperty("Tama√±o X", wxPG_LABEL, panelProvisional->getTamX()));
-        gridPropiedadesPanel->Append(new wxIntProperty("Tama√±o Y", wxPG_LABEL, panelProvisional->getTamY()));
+        gridPropiedadesPanel->Append(new wxIntProperty("PosiciÛn X", wxPG_LABEL, panelProvisional->getPosX()));
+        gridPropiedadesPanel->Append(new wxIntProperty("PosiciÛn Y", wxPG_LABEL, panelProvisional->getPosY()));
+        gridPropiedadesPanel->Append(new wxIntProperty("TamaÒo X", wxPG_LABEL, panelProvisional->getTamX()));
+        gridPropiedadesPanel->Append(new wxIntProperty("TamaÒo Y", wxPG_LABEL, panelProvisional->getTamY()));
         gridPropiedadesPanel->Append(new wxSystemColourProperty("Color", wxPG_LABEL, wxColour(panelProvisional->getR(), panelProvisional->getG(), panelProvisional->getB())));
         gridPropiedadesPanel->Append(new wxImageFileProperty("Imagen", wxPG_LABEL, panelProvisional->getURLImagen()));
-        gridPropiedadesPanel->Append(new wxBoolProperty("Imagen s√≠/no", wxPG_LABEL, panelProvisional->getHayImagen()));
+        gridPropiedadesPanel->Append(new wxBoolProperty("Imagen sÌ/no", wxPG_LABEL, panelProvisional->getHayImagen()));
 
         propiedadesPanelesCreados.insert(propiedadesPanelesCreados.begin() + contadorPropiedadesPaneles, gridPropiedadesPanel);
 
@@ -2143,6 +2144,14 @@ class ventanaHUD : public wxAuiNotebook
 
         propiedadesPanelesCreados[contadorPropiedadesPaneles]->Show();
         panelesCreados[contadorPaneles]->setProperties(gridPropiedadesPanel);
+
+        for (int j = 0; j < contadorElementosJerarquia; j++)
+        {
+            arbolJerarquia->SetItemState(j, 0, wxLIST_STATE_SELECTED | wxLIST_STATE_FOCUSED);
+        }
+
+        arbolJerarquia->SetItemState(contadorElementosJerarquia, wxLIST_STATE_SELECTED, wxLIST_STATE_SELECTED);
+        seleccionaElementoLista(contadorElementosJerarquia);
 
         if (hayImagenPanel)
         {
@@ -2208,8 +2217,8 @@ class ventanaHUD : public wxAuiNotebook
 
         gridPropiedadesTexto->Append(new wxStringProperty("Nombre", wxPG_LABEL, textoProvisional->getNombre()));
         gridPropiedadesTexto->Append(new wxStringProperty("Texto", wxPG_LABEL, textoProvisional->getValorTexto()));
-        gridPropiedadesTexto->Append(new wxIntProperty("Posici√≥n X", wxPG_LABEL, textoProvisional->getPosX()));
-        gridPropiedadesTexto->Append(new wxIntProperty("Posici√≥n Y", wxPG_LABEL, textoProvisional->getPosY()));
+        gridPropiedadesTexto->Append(new wxIntProperty("PosiciÛn X", wxPG_LABEL, textoProvisional->getPosX()));
+        gridPropiedadesTexto->Append(new wxIntProperty("PosiciÛn Y", wxPG_LABEL, textoProvisional->getPosY()));
         gridPropiedadesTexto->Append(new wxFontProperty("Fuente", wxPG_LABEL, textoProvisional->getFuente()));
 
 
@@ -2223,6 +2232,14 @@ class ventanaHUD : public wxAuiNotebook
 
         propiedadesTextosCreados[contadorPropiedadesTextos]->Show();
         textosCreados[contadorTextos]->setProperties(gridPropiedadesTexto);
+
+        for (int j = 0; j < contadorElementosJerarquia; j++)
+        {
+            arbolJerarquia->SetItemState(j, 0, wxLIST_STATE_SELECTED | wxLIST_STATE_FOCUSED);
+        }
+
+        arbolJerarquia->SetItemState(contadorElementosJerarquia, wxLIST_STATE_SELECTED, wxLIST_STATE_SELECTED);
+        seleccionaElementoLista(contadorElementosJerarquia);
     
         contadorPropiedadesTextos++;
         contadorTextos++;
@@ -2467,7 +2484,7 @@ class ventanaHUD : public wxAuiNotebook
 
         if (archivoErroneo)
         {
-            int res = wxMessageBox("No has Cargado un tipo de archivo apropiado. Int√©ntalo otra vez.", "Error de Archivo", wxOK, this);
+            int res = wxMessageBox("No has Cargado un tipo de archivo apropiado. IntÈntalo otra vez.", "Error de Archivo", wxOK, this);
         }
     }
 
@@ -2831,25 +2848,25 @@ class ventanaHUD : public wxAuiNotebook
             padre->Update();
             padre->Refresh();
         }
-        else if (nombrePropiedad == "Posici√≥n X")
+        else if (nombrePropiedad == "PosiciÛn X")
         {
             panelesCreados[idProvisional]->setPosX(valor.As<int>());
             padre->Update();
             padre->Refresh();
         }
-        else if (nombrePropiedad == "Posici√≥n Y")
+        else if (nombrePropiedad == "PosiciÛn Y")
         {
             panelesCreados[idProvisional]->setPosY(valor.As<int>());
             padre->Update();
             padre->Refresh();
         }
-        else if (nombrePropiedad == "Tama√±o X")
+        else if (nombrePropiedad == "TamaÒo X")
         {
             panelesCreados[idProvisional]->setTamX(valor.As<int>());
             padre->Update();
             padre->Refresh();
         }
-        else if (nombrePropiedad == "Tama√±o Y")
+        else if (nombrePropiedad == "TamaÒo Y")
         {
             panelesCreados[idProvisional]->setTamY(valor.As<int>());
             padre->Update();
@@ -2874,15 +2891,15 @@ class ventanaHUD : public wxAuiNotebook
             panelesCreados[idProvisional]->ponImagen(valor.As<wxString>(), wxBITMAP_TYPE_ANY);
             panelesCreados[idProvisional]->setURLImagen(valor.As<wxString>());
             panelesCreados[idProvisional]->setHayImagen(true);
-            propiedadesPanelesCreados[idProvisional]->GetProperty("Imagen s√≠/no")->SetValue(true);
+            propiedadesPanelesCreados[idProvisional]->GetProperty("Imagen sÌ/no")->SetValue(true);
             padre->Update();
             padre->Refresh();
         }
-        else if (nombrePropiedad == "Imagen s√≠/no")
+        else if (nombrePropiedad == "Imagen sÌ/no")
         {
             if (panelesCreados[idProvisional]->getURLImagen() == "NO HAY")
             {
-                int res = wxMessageBox("No hay ninguna imagen a√±adida. A√±√°dela.", "Cuidado", wxOK, this);
+                int res = wxMessageBox("No hay ninguna imagen aÒadida. AÒ·dela.", "Cuidado", wxOK, this);
             }
             else 
             {
@@ -2946,13 +2963,13 @@ class ventanaHUD : public wxAuiNotebook
             padre->Update();
             padre->Refresh();
         }
-        else if (nombrePropiedad == "Posici√≥n X")
+        else if (nombrePropiedad == "PosiciÛn X")
         {
             textosCreados[idProvisional]->setPosX(valor.As<int>());
             padre->Update();
             padre->Refresh();
         }
-        else if (nombrePropiedad == "Posici√≥n Y")
+        else if (nombrePropiedad == "PosiciÛn Y")
         {
             textosCreados[idProvisional]->setPosY(valor.As<int>());
             padre->Update();
@@ -4231,7 +4248,7 @@ MyFrame::MyFrame(wxWindow* parent, wxWindowID id, const wxString& title, const w
     contadorVentanas = 0;
     numeroVentanas = 1;
 
-   //////////// MEN√ö ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   //////////// MEN⁄ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
    // create a menu bar
     wxMenu* archivoMenu = new wxMenu;
     wxMenu* vistaMenu = new wxMenu;
@@ -4240,23 +4257,23 @@ MyFrame::MyFrame(wxWindow* parent, wxWindowID id, const wxString& title, const w
 
     archivoMenu->Append(GuardarMenu, "Guardar Ventana Actual", "Guardar HUD");
     archivoMenu->Append(GuardarTodoMenu, "Guardar Todas las Ventanas", "Guardar HUD");
-    archivoMenu->Append(CargarMenu, "Cargar una Distribuci√≥n en esta Ventana", "Cargar HUD existente");
+    archivoMenu->Append(CargarMenu, "Cargar una DistribuciÛn en esta Ventana", "Cargar HUD existente");
     archivoMenu->Append(CargarTodoMenu, "Cargar Varias Ventanas", "Cargar HUD de Varias Ventanas");
-    archivoMenu->Append(ImportarLayoutMenu, "Importar Layout de Ventanas", "Importar un Layout de Ventanas Externo");
+    archivoMenu->Append(ImportarLayoutMenu, "Importar Layout de Ventanas del LSyM", "Importar un Layout de Ventanas Externo");
     archivoMenu->Append(ImportarDisplayMenu, "Importar Layout del Dispositivo", "Importar el Layout de tu Sistema");
     archivoMenu->Append(Quit, "Salir\tAlt-X", "Salir del Programa");
 
-    vistaMenu->Append(Ventana, "Crear una Nueva Ventana", "Crea una nueva Ventana para a√±adir elementos");
+    vistaMenu->Append(Ventana, "Crear una Nueva Ventana", "Crea una nueva Ventana para aÒadir elementos");
     vistaMenu->Append(CambiaFondoPantallaMenu, "Cambiar Fondo de Ventana", "Cambia el fondo de la pantalla de Vista");
     vistaMenu->Append(QuitaFondoPantallaMenu, "Quitar Fondo de Ventana", "Elimina el fondo de la pantalla de Vista");
     vistaMenu->Append(vistaVentanas, "Vista Global de Ventanas Creadas", "Muestra una Perspectiva Global de las Ventanas Creadas");
-    //vistaMenu->Append(maximasVentanas, "Establece el l√≠mite de Ventanas", "Establece el l√≠mite de Ventanas posibles para crear");
+    //vistaMenu->Append(maximasVentanas, "Establece el lÌmite de Ventanas", "Establece el lÌmite de Ventanas posibles para crear");
 
     componentesMenu->Append(Panel, "Panel", "Genera un panel para el HUD");
     componentesMenu->Append(Texto, "Texto", "Genera un texto para el HUD");
     componentesMenu->Append(Elemento, "Importar Imagen como Panel", "Importa una Imagen como elemento Panel");
 
-    ayudaMenu->Append(About, "Sobre m√≠...\tF1", "Muestra al creador de la app");
+    ayudaMenu->Append(About, "Sobre mÌ...\tF1", "Muestra al creador de la app");
 
     // now append the freshly created menu to the menu bar...
     wxMenuBar* barraMenu = new wxMenuBar();
@@ -4278,7 +4295,7 @@ MyFrame::MyFrame(wxWindow* parent, wxWindowID id, const wxString& title, const w
     
     // Crea una Status Bar
     CreateStatusBar(2);
-    SetStatusText("¬°Bienvenido a la HUDApp!");
+    SetStatusText("°Bienvenido a la HUDApp!");
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -4289,7 +4306,7 @@ MyFrame::MyFrame(wxWindow* parent, wxWindowID id, const wxString& title, const w
     SetMinSize(FromDIP(wxSize(400,300)));
 
 
-    // A√±ade el Panel Central de Vista.
+    // AÒade el Panel Central de Vista.
     tamNotebook = wxSize(screen.width * 0.8, screen.height * 0.9);
     ctrl = new wxAuiNotebook(this, wxID_ANY, wxPoint(0, 0), FromDIP(wxSize(tamNotebook.x, tamNotebook.y)), m_notebook_style);
 
@@ -4383,7 +4400,7 @@ void MyFrame::creaVentana(bool cargando, wxString nombre, bool hayImagenVista, w
     }
     else
     {
-        int res = wxMessageBox("Has llegado al n√∫mero m√°ximo de Ventanas. No se pueden crear m√°s", "L√≠mite Superado", wxOK, this);
+        int res = wxMessageBox("Has llegado al n˙mero m·ximo de Ventanas. No se pueden crear m·s", "LÌmite Superado", wxOK, this);
     }
 
 }
@@ -4394,7 +4411,7 @@ void MyFrame::creaPanelMenu(wxCommandEvent& event)
 
     if (contadorVentanas == 0)
     {
-        int res = wxMessageBox("No hay ninguna Ventana Creada. Cr√©ala.", "Cuidado", wxOK, this);
+        int res = wxMessageBox("No hay ninguna Ventana Creada. CrÈala.", "Cuidado", wxOK, this);
     }
     else 
     {
@@ -4417,7 +4434,7 @@ void MyFrame::creaTextoMenu(wxCommandEvent& event)
 {
     if (contadorVentanas == 0)
     {
-        int res = wxMessageBox("No hay ninguna Ventana Creada. Cr√©ala.", "Cuidado", wxOK, this);
+        int res = wxMessageBox("No hay ninguna Ventana Creada. CrÈala.", "Cuidado", wxOK, this);
     }
     else 
     {
@@ -4443,7 +4460,7 @@ void MyFrame::creaElementoMenu(wxCommandEvent& event)
 {
     if (contadorVentanas == 0)
     {
-        int res = wxMessageBox("No hay ninguna Ventana Creada. Cr√©ala.", "Cuidado", wxOK, this);
+        int res = wxMessageBox("No hay ninguna Ventana Creada. CrÈala.", "Cuidado", wxOK, this);
     }
     else
     {
@@ -4479,7 +4496,7 @@ void MyFrame::cambiaFondoPantallaMenu(wxCommandEvent& WXUNUSED(event))
 {
     if (contadorVentanas == 0)
     {
-        int res = wxMessageBox("No hay ninguna Ventana Creada. Cr√©ala.", "Cuidado", wxOK, this);
+        int res = wxMessageBox("No hay ninguna Ventana Creada. CrÈala.", "Cuidado", wxOK, this);
     }
     else 
     {
@@ -4506,7 +4523,7 @@ void MyFrame::quitaFondoPantallaMenu(wxCommandEvent& WXUNUSED(event))
 {
     if (contadorVentanas == 0)
     {
-        int res = wxMessageBox("No hay ninguna Ventana Creada. Cr√©ala.", "Cuidado", wxOK, this);
+        int res = wxMessageBox("No hay ninguna Ventana Creada. CrÈala.", "Cuidado", wxOK, this);
     }
     else
     {
@@ -4716,7 +4733,7 @@ void MyFrame::importa3Pantallas(wxString path)
 
     if(archivoErroneo)
     {
-        int res = wxMessageBox("No has Cargado un tipo de archivo apropiado. Int√©ntalo otra vez.", "Error de Archivo", wxOK, this);
+        int res = wxMessageBox("No has Cargado un tipo de archivo apropiado. IntÈntalo otra vez.", "Error de Archivo", wxOK, this);
     }
 }
 
@@ -4746,15 +4763,15 @@ void MyFrame::guardaMenu(wxCommandEvent& WXUNUSED(event))
 
     if (contadorVentanas == 0)
     {
-        int res = wxMessageBox("No hay ninguna Ventana Creada. Cr√©ala.", "Cuidado", wxOK, this);
+        int res = wxMessageBox("No hay ninguna Ventana Creada. CrÈala.", "Cuidado", wxOK, this);
     }
     else if (ventanasCreadas[id]->panelesCreados.size() == 0 && ventanasCreadas[id]->textosCreados.size() == 0)
     {
-        int res = wxMessageBox("No hay ning√∫n elemento en la Ventana Creada. A√±ade alguno.", "Cuidado", wxOK, this);
+        int res = wxMessageBox("No hay ning˙n elemento en la Ventana Creada. AÒade alguno.", "Cuidado", wxOK, this);
     }
     else
     {
-        wxFileDialog* saveDialog = new wxFileDialog(this, _("Selecciona una ubicaci√≥n para guardar el Archivo"), wxEmptyString, wxEmptyString, "TXT files (*.txt)|*.txt", wxFD_SAVE | wxFD_OVERWRITE_PROMPT);
+        wxFileDialog* saveDialog = new wxFileDialog(this, _("Selecciona una ubicaciÛn para guardar el Archivo"), wxEmptyString, wxEmptyString, "TXT files (*.txt)|*.txt", wxFD_SAVE | wxFD_OVERWRITE_PROMPT);
 
         // Creates a "save file" dialog with 4 file types
         if (saveDialog->ShowModal() == wxID_OK) // if the user click "Save" instead of "Cancel"
@@ -4775,11 +4792,11 @@ void MyFrame::guardaTodoMenu(wxCommandEvent& WXUNUSED(event))
 {
     if (contadorVentanas == 0)
     {
-        int res = wxMessageBox("No hay ninguna Ventana Creada. Cr√©ala.", "Cuidado", wxOK, this);
+        int res = wxMessageBox("No hay ninguna Ventana Creada. CrÈala.", "Cuidado", wxOK, this);
     }
     else
     {
-        wxFileDialog* saveDialog = new wxFileDialog(this, _("Selecciona una ubicaci√≥n para guardar el Archivo"), wxEmptyString, wxEmptyString, "TXT files (*.txt)|*.txt", wxFD_SAVE | wxFD_OVERWRITE_PROMPT);
+        wxFileDialog* saveDialog = new wxFileDialog(this, _("Selecciona una ubicaciÛn para guardar el Archivo"), wxEmptyString, wxEmptyString, "TXT files (*.txt)|*.txt", wxFD_SAVE | wxFD_OVERWRITE_PROMPT);
 
         // Creates a "save file" dialog with 4 file types
         if (saveDialog->ShowModal() == wxID_OK) // if the user click "Save" instead of "Cancel"
@@ -4803,13 +4820,13 @@ void MyFrame::guardaTodo(wxString path)
         {
             file.Write("Ventana\n");                                                                                // Tipo
 
-            file.Write(wxString::Format(wxT("%d"), ventanasCreadas[j]->getNumVentana()) + "\n");                    // N√∫mero de Ventana
+            file.Write(wxString::Format(wxT("%d"), ventanasCreadas[j]->getNumVentana()) + "\n");                    // N˙mero de Ventana
 
             int tamX = ventanasCreadas[j]->getTamVentana().x;
             int tamY = ventanasCreadas[j]->getTamVentana().y;
 
-            file.Write(wxString::Format(wxT("%d"), tamX) + "\n");                                                   // Tama√±o en X de la Ventana
-            file.Write(wxString::Format(wxT("%d"), tamY) + "\n");                                                   // Tama√±o en Y de la Ventana
+            file.Write(wxString::Format(wxT("%d"), tamX) + "\n");                                                   // TamaÒo en X de la Ventana
+            file.Write(wxString::Format(wxT("%d"), tamY) + "\n");                                                   // TamaÒo en Y de la Ventana
 
             wxString nombre = ventanasCreadas[j]->getNombreVentana();
 
@@ -4825,7 +4842,7 @@ void MyFrame::guardaTodo(wxString path)
             }
             file.Write(wxString::Format(wxT("%d"), ventanasCreadas[j]->getImagenVista()) + "\n");                   // Si tiene Imagen de Fondo la Ventana
             file.Write(ventanasCreadas[j]->getURLImagenVista() + "\n");                                             // URL de la IMAGEN; si no hay: "NO HAY"
-            file.Write(wxString::Format(wxT("%d"), ventanasCreadas[j]->getContadorElementosJerarquia()) + "\n");    // N√∫mero de Elementos Pintados en la Ventana
+            file.Write(wxString::Format(wxT("%d"), ventanasCreadas[j]->getContadorElementosJerarquia()) + "\n");    // N˙mero de Elementos Pintados en la Ventana
 
 
             for (int i = 0; i < ventanasCreadas[j]->getContadorElementosJerarquia(); i++)
@@ -4877,11 +4894,11 @@ void MyFrame::cargaMenu(wxCommandEvent& WXUNUSED(event))
 {
     if (contadorVentanas == 0)
     {
-        int res = wxMessageBox("No hay ninguna Ventana Creada. Cr√©ala.", "Cuidado", wxOK, this);
+        int res = wxMessageBox("No hay ninguna Ventana Creada. CrÈala.", "Cuidado", wxOK, this);
     }
     else 
     {
-        wxFileDialog* OpenDialog = new wxFileDialog(this, _("Selecciona un archivo para Cargar una Distribuci√≥n"), wxEmptyString, wxEmptyString, "TXT files (*.txt)|*.txt", wxFD_OPEN, wxDefaultPosition);
+        wxFileDialog* OpenDialog = new wxFileDialog(this, _("Selecciona un archivo para Cargar una DistribuciÛn"), wxEmptyString, wxEmptyString, "TXT files (*.txt)|*.txt", wxFD_OPEN, wxDefaultPosition);
 
         // Creates a "open file" dialog with 4 file types
         if (OpenDialog->ShowModal() == wxID_OK) // if the user click "Open" instead of "Cancel"
@@ -4918,7 +4935,7 @@ void MyFrame::cargaTodoMenu(wxCommandEvent& WXUNUSED(event))
     }
     else
     {
-        int res = wxMessageBox("No puedes cargar ventanas nuevas. Has superado el l√≠mite.", "L√≠mite Superado", wxOK, this);
+        int res = wxMessageBox("No puedes cargar ventanas nuevas. Has superado el lÌmite.", "LÌmite Superado", wxOK, this);
     }
 }
 
@@ -5047,7 +5064,7 @@ void MyFrame::cargaTodo(wxString path)
             }
             else
             {
-                int res = wxMessageBox("No puedes cargar ventanas nuevas. Has superado el l√≠mite.", "L√≠mite Superado", wxOK, this);
+                int res = wxMessageBox("No puedes cargar ventanas nuevas. Has superado el lÌmite.", "LÌmite Superado", wxOK, this);
                 break;
             }
         }
@@ -5055,7 +5072,7 @@ void MyFrame::cargaTodo(wxString path)
 
     if (archivoErroneo)
     {
-        int res = wxMessageBox("No has Cargado un tipo de archivo apropiado. Int√©ntalo otra vez.", "Error de Archivo", wxOK, this);
+        int res = wxMessageBox("No has Cargado un tipo de archivo apropiado. IntÈntalo otra vez.", "Error de Archivo", wxOK, this);
     }
 }
    
@@ -5133,7 +5150,7 @@ void MyFrame::OnNotebookPageClose(wxAuiNotebookEvent& evt)
     wxAuiPaneInfo panelPropiedades = m_mgr.GetPane(propiedades);
     wxAuiPaneInfo panelVentana = m_mgr.GetPane(ventana);
 
-    int res = wxMessageBox("¬øEst√°s seguro de querer cerrar esta ventana?", "wxAUI", wxYES_NO, this);
+    int res = wxMessageBox("øEst·s seguro de querer cerrar esta ventana?", "wxAUI", wxYES_NO, this);
 
 
     if (contadorVentanas == 1)
@@ -5222,14 +5239,14 @@ void MyFrame::OnAbout(wxCommandEvent& WXUNUSED(event))
 {
     wxMessageBox(wxString::Format
     (
-        "¬°Bienvenido a la HUDApp!\n"
+        "°Bienvenido a la HUDApp!\n"
         "\n"
         "Creado por David Lozano Pascual\n"
         "running under %s.",
         wxVERSION_STRING,
         wxGetOsDescription()
     ),
-        "Sobre m√≠...",
+        "Sobre mÌ...",
         wxOK | wxICON_INFORMATION,
         this);
 }
